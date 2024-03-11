@@ -3,50 +3,34 @@
 set -e
 
 cp .zshrc ~/
-cp .p10k.zsh ~/
+# cp .p10k.zsh ~/
 
+cp ./.gitconfig ~
 
-if ! [ -d ~/.oh-my-zsh/custom/themes ]; then
-  mkdir ~/.oh-my-zsh/custom/themes
-fi
+# powerline fonts for zsh agnoster theme
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+cd .. && rm -rf fonts
 
-if ! [ -d ~/.oh-my-zsh/custom/themes ]; then
-  mkdir -p ~/.oh-my-zsh/custom/themes
-fi
+# oh-my-zsh & plugins
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+zsh -c 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
+zsh -c 'git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting'
+cp ./.zshrc ~
 
-if ! [ -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]; then
-  git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-else
-  cd ~/.oh-my-zsh/custom/themes/powerlevel10k
-  git pull
-fi
+########################################################################################################################
+#### set agnoster as theme, this came from https://gist.github.com/corentinbettiol/21a6d4e942a0ee58d51acb7996697a88
+#### in vscode settings for devcontainer (not for User or Workspace), Search for terminal.integrated.fontFamily value, and set it to "Roboto Mono for Powerline" (or any of those: https://github.com/powerline/fonts#font-families font families).
+# save current zshrc
+mv ~/.zshrc ~/.zshrc.bak
 
-if ! [ -d ~/.oh-my-zsh/custom/plugins ]; then
-  mkdir ~/.oh-my-zsh/custom/plugins
-fi
+sudo sh -c "$(wget -O- https://raw.githubusercontent.com/deluan/zsh-in-docker/master/zsh-in-docker.sh)" -- \
+    -t agnoster
 
-if ! [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-else
-  cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-  git pull
-fi
-
-if ! [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-else
-  cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-  git pull
-fi
-
-if ! [ -d ~/.oh-my-zsh/custom/plugins/conda-zsh-completion ]; then
-  git clone https://github.com/conda-incubator/conda-zsh-completion.git ~/.oh-my-zsh/custom/plugins/conda-zsh-completion
-else
-  cd ~/.oh-my-zsh/custom/plugins/conda-zsh-completion
-  git pull
-fi
-
-# if command -v conda &> /dev/null
-# then
-#     conda init --all
-# fi
+# remove newly created zshrc
+rm -f ~/.zshrc
+# restore saved zshrc
+mv ~/.zshrc.bak ~/.zshrc
+# update theme
+sed -i '/^ZSH_THEME/c\ZSH_THEME="agnoster"' ~/.zshrc 
