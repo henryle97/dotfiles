@@ -5,7 +5,6 @@ set -e
 cp .zshrc ~/
 cp .p10k.zsh ~/
 
-wget https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim -O ~/.vim/colors/monokai.vim
 
 if ! [ -d ~/.oh-my-zsh/custom/themes ]; then
   mkdir ~/.oh-my-zsh/custom/themes
