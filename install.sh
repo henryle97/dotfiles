@@ -14,9 +14,14 @@ cd fonts
 cd .. && rm -rf fonts
 
 # oh-my-zsh & plugins
-if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/" ]; then
-    wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh || true
+# apt update &&  apt install zsh -y
+if [ ! -d "/root/.oh-my-zs" ]; then
+    export ZSH=""
+    curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o /tmp/install.sh &&
+        sed -i 's/CHSH=no/CHSH=yes/g' /tmp/install.sh &&
+        echo "Y" | sh /tmp/install.sh 
 fi
+
 if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/zsh-autosuggestions" ]; then
     zsh -c 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
 fi
