@@ -14,7 +14,7 @@ cp ./.gitconfig ~
 # cd .. && rm -rf fonts
 
 # oh-my-zsh & plugins
-# apt update &&  apt install zsh -y
+apt update &&  apt install zsh -y
 if [ ! -d "/root/.oh-my-zs" ]; then
     export ZSH=""
     curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o /tmp/install.sh &&
