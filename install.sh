@@ -14,13 +14,13 @@ cd fonts
 cd .. && rm -rf fonts
 
 # oh-my-zsh & plugins
-if [ -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/" ]; then
+if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/" ]; then
     wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh || true
 fi
-if [  -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/zsh-autosuggestions" ]; then
+if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/zsh-autosuggestions" ]; then
     zsh -c 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
 fi
-if [  -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
+if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
     zsh -c 'git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting'
 fi
 cp ./.zshrc ~
