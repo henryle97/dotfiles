@@ -1,0 +1,178 @@
+{
+    "[python]": {
+      "editor.formatOnType": false,
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.formatOnSave": false,
+    },
+    "remote.SSH.remotePlatform": {
+      "107.120.133.27": "linux",
+      "107.120.133.29": "linux",
+      "107.120.133.42": "linux",
+      "42.96.43.84": "linux",
+      "42.96.40.153": "linux",
+      "42.96.43.105": "linux",
+      "107.120.133.27-lvhoang": "linux",
+      "107.120.133.27-sds": "linux",
+      "42.96.40.255": "linux",
+      "107.120.133.27-hoanglv": "linux",
+      "L40": "linux"
+    },
+    // "black-formatter.args": [
+    //   "--line-length",
+    //   "79"
+    // ],
+    "explorer.confirmDragAndDrop": false,
+    "xml.server.vmargs": "-Xmx128M",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Beautiful Dracula Normal",
+    "vsicons.dontShowNewVersionMessage": true,
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.terminalAuthentication": false,
+    "files.autoSave": "onFocusChange",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    // "terminal.integrated.fontFamily": "monospace",
+    "cmake.loggingLevel": "debug",
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": true,
+      "markdown": false,
+      "scminput": false
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.editorAssociations": {
+      "*.copilotmd": "vscode.markdown.preview.editor",
+      "*.xlsx": "gc-excelviewer-excel-editor",
+      "*.csv": "gc-excelviewer-csv-editor"
+    },
+    "workbench.startupEditor": "none",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "tabnine.experimentalAutoImports": true,
+    "redhat.telemetry.enabled": true,
+    "workbench.colorCustomizations": {},
+    "gitlens.autolinks": [],
+    "gitlens.ai.experimental.provider": "openai",
+    "gitlens.ai.experimental.openai.model": "gpt-3.5-turbo-1106",
+    "remote.autoForwardPortsSource": "hybrid",
+    // "sonarlint.connectedMode.connections.sonarqube": [
+    //     {
+    //         "serverUrl": "https://sdsdev.co.kr/sonarqube1",
+    //         "connectionId": "https-sdsdev-co-kr-sonarqube1"
+    //     }
+    // ],
+    "editor.largeFileOptimizations": false,
+    "dotfiles.repository": "henryle97/dotfiles",
+    "dotfiles.installCommand": "install.sh",
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    "makefile.configureOnOpen": false,
+    "workbench.sideBar.location": "right",
+    "vim.smartRelativeLine": true,
+    "editor.cursorSurroundingLines": 8,
+    "vim.normalModeKeyBindings": [
+      {
+        "before": [
+          "<leader>",
+          "e"
+        ],
+        "commands": [
+          "workbench.view.explorer"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "p",
+          "d"
+        ],
+        "commands": [
+          "editor.action.peekDefinition"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "h"
+        ],
+        "commands": [
+          "editor.action.showDefinitionPreviewHover"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "i"
+        ],
+        "commands": [
+          "editor.action.goToImplementation"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "p",
+          "i"
+        ],
+        "commands": [
+          "editor.action.peekImplementation"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "q"
+        ],
+        "commands": [
+          "editor.action.quickFix"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "r"
+        ],
+        "commands": [
+          "editor.action.referenceSearch.trigger"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "t"
+        ],
+        "commands": [
+          "editor.action.goToTypeDefinition"
+        ]
+      },
+      {
+        "before": [
+          "g",
+          "p",
+          "t"
+        ],
+        "commands": [
+          "editor.action.peekTypeDefinition"
+        ]
+      },
+    ],
+    "vim.leader": "<space>",
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "#a9dc7660",
+    "vim.highlightedyank.duration": 250,
+    "vim.useSystemClipboard": true,
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "ruff.lineLength": 79,
+    "ruff.configuration": "/home/hoanglv/pyproject.toml",
+  }
+  
