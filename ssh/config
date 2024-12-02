@@ -1,0 +1,11 @@
+# Other company Repository
+Host code.other_git.com
+    HostName code.other_git.com
+    User henryle
+    IdentityFile ~/.ssh/id_rsa_gitkr
+
+# GitHub Repository
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_github
